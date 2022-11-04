@@ -1,10 +1,10 @@
 # Background
 Hi
-I received a text message from +61 406 456 469 which suprisingly had no typos (not that I'm much of a judge), telling me that $750 had been moved rejected and to log in and change my password or whatever.
+I received a text message from +61 406 456 469 which surprisingly had no typos (not that I'm much of a judge), telling me that $750 had been moved rejected and to log in and change my password or whatever.
 
 ![Original Text](Assets/IMG_2639(Small).jpeg)
 
-Going to the website, they clearly wanted to make people believe that they were on teh ANZ website
+Going to the website, they clearly wanted to make people believe that they were on the ANZ website
 > https://review-pending-transaction.com/login.php
 
 ![Their Website](Assets/TheirWebsite(Small).png)
@@ -87,14 +87,18 @@ password: 		ajdkfhurtlm
 Using the top passwords from here:
 > https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10k-most-common.txt
 
-Looking at my anz CRN it's a 9 digit number, so using random to generate a number between 100000000 - 999999999.
+Looking at my ANZ CRN it's a 9 digit number, so using random to generate a number between 100000000 - 999999999.
 
 ## run spam.py
 See the spam.py file.
 
-My plan is to spam them every 4 seconds, just so it's somewhat believable ?
+My plan is to spam them every 4 seconds, I thought I would just let it run through the passwords for a few days and hopefully they don't do any kind of detailed analysis on the timing to figure out which posts are mine, and which posts are from their real victims.
 
-I've seen lots of people just spam them with thousands of requests in parallel, which might also be ok, but they might just delete a small batch of data over the time period.
+I should mention that I start a new requests session & grab a cookie every time I go to their home page, I just thought I would make it slightly harder on them by using new cookies for every request, so hopefully it's just a bit harder to decipher which requests are mine and which are real. I fully recognise that they might just be able to do something with my IP address, but I wasn't willing to put in the time to figure that out.
+
+I've seen lots of people on YouTube just spam them with thousands of requests in parallel, which might also be ok, but they might just ignore the results over the hour that until I ran out of passwords, and go back to it. I thought maybe by spamming in smaller chunks I might mess them up for longer?
+
+I don't know, happy to have feedback from someone who knows what they're actually doing :)
 
 # Results
 
@@ -107,3 +111,8 @@ My gut feel was that they probably just blocked my IP address, but [isup.me](htt
 ![it's gone](Assets/isup.me(Small).png)
 
 So I guess that's a win?
+
+# Lessons Learnt
+After this has all finished I've had a bit of a look at rotating proxies in python 3, [Scrapehero](https://www.scrapehero.com/how-to-rotate-proxies-and-ip-addresses-using-python-3/) has a tutorial about how to do it, and [Proxy Requests](https://github.com/rootVIII/proxy_requests) looks easy enough.  
+
+Otherwise it was a relatively small project which I didn't want to sink too much time in to, I'm happy that I (maybe?) made a difference, and it wasn't that complex to do.
