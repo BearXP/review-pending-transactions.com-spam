@@ -45,7 +45,7 @@ upgrade-insecure-requests: 1
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
 ```
 
-## Step 2. Post crap, get the deets.
+## Step 2. Post fake details, get the header / data format.
 By clicking through and sending some fake data, it looks like the actual post command goes here:
 ```
 https://review-pending-transaction.com/core/actions.php?action=send_data
